@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Longin</title>
+    <link rel="stylesheet" href="login.css" />
+    <style>
+    .nav-bar{
+		    margin-top: 0;
+		    margin-right: 100;
+		    margin-left: 100;
+		    display: flex;
+		    align-items: flex-end;
+		    justify-content: space-around;
+		    margin-bottom: 15px 0;
+		    background: #e97d7d;
+		    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
+		    border-radius:3px ;
+		}
+		.nav-bar ul{
+		    list-style-type: none;
+		    margin: 0;
+		    padding: 0;
+		    display: block;
+		}
+		.nav-bar li{
+
+		    list-style-type: none;
+		    margin: 0;
+		    padding: 0;
+		    display: inline-block;
+		    position: relative;
+		    font-size: 14px;
+		    color: silver;
+
+		}
+		.nav-bar a{
+		    padding: 15px 20px;
+		    font-size: 20px;
+		    color: black;
+		    display: inline-block;
+		    outline: 0;
+		    font-weight: 400;
+
+		}
+		input[type=text]{
+
+		    margin-top: 0;
+		    padding: 10px;
+		    border: none;
+		    font-size: 25px;
+		    font-family: sans-serif;
+		}
+		input[type="submit"]{
+		    margin-top: 10px;
+		    font-size: 20px;
+		    margin-bottom: 50px;
+		    width: 220px;
+		    height: 32px;
+		    background: #e97d7d;
+		    border: none;
+		    border-radius: 100px;
+		    font-family: sans-serif;
+		    font-weight: 500;
+		    text-transform: uppercase;
+		    transition: 0.2s ease;
+		    cursor: pointer;
+		}
+        .container{
+        background-color: honeydew;
+        display: flex;
+        max-width: 500px;
+        margin: 15px auto;
+        border: 1px solid#d9d9d9;
+        box-shadow: 1px 1px 8px -2px rgba(0,0,0,0.75);
+        color: #737373;
+        border-radius: 5px;
+
+        }
+        .container h1{
+            position: center;
+        }
+
+        .left {
+            padding: 40px;
+            width: 200px;
+
+            background: #fff;
+        }
+
+        .right {
+            width: 250px;
+
+            background-image: url( "download.jpg" );
+            color: #fff;
+
+        }
+        .right h3{
+            color:#777;
+        }
+        input[type="text"], {
+            font-size: 16px;
+            padding: 10px;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            border-bottom: 1px solid black;
+            margin-bottom: 30px;
+        }
+
+
+        button[type="submit"] {
+            padding: 10px 40px;
+            margin-top: 15px;
+            background: #ff6666;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+
+    </style>
+</head>
+<body>
+<header>
+    <div class="nav-bar">
+        <ul>
+            <li ><h1> Join Game  </h1></li>
+        </ul>
+    </div>
+</header>
+
+
+<div class="container" >
+
+    <div class="left">
+        <h1>Welcome </h1>
+
+
+        <div class="ActiveGame">
+            <form th:action="@{/createGame}" >
+                <input type="submit" name="btnSubmit" value="Create NewGame" />
+            </form>
+            <input type="submit" name="btnSubmit" value="Join Game "/>
+
+        </div>
+
+
+
+
+    </div>
+
+    <div class="right" >
+                <br><br><br>
+                <br><br><br>
+                <h3>* Stop stressing<br>
+                    *  Stop worrying<br>
+                    *  Lighten up<br>
+                    *  Forgive yourself<br>
+                </h3>
+    </div>
+
+</div>
+
+</body>
+
+</html>

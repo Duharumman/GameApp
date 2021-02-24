@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Commands</title>
+
+    <style>
+		.nav-bar{
+		    margin-top: 0;
+		    margin-right: 100;
+		    margin-left: 100;
+		    display: flex;
+		    align-items: flex-end;
+		    justify-content: space-around;
+		    margin-bottom: 15px 0;
+		    background: #e97d7d;
+		    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3);
+		    border-radius:3px ;
+		}
+		.nav-bar ul{
+		    list-style-type: none;
+		    margin: 0;
+		    padding: 0;
+		    display: block;
+		}
+		.nav-bar li{
+
+		    list-style-type: none;
+		    margin: 0;
+		    padding: 0;
+		    display: inline-block;
+		    position: relative;
+		    font-size: 14px;
+		    color: silver;
+
+		}
+		.nav-bar a{
+		    padding: 15px 20px;
+		    font-size: 20px;
+		    color: black;
+		    display: inline-block;
+		    outline: 0;
+		    font-weight: 400;
+
+		}
+		input[type=text]{
+
+		    margin-top: 0;
+		    padding: 10px;
+		    border: none;
+		    font-size: 25px;
+		    font-family: sans-serif;
+		}
+		input[type="submit"]{
+		    margin-top: 10px;
+		    font-size: 20px;
+
+		    margin-bottom: 50px;
+		    width: 120px;
+		    height: 32px;
+		    background: #e97d7d;
+		    border: none;
+		    border-radius: 100px;
+		    font-family: sans-serif;
+		    font-weight: 500;
+		    text-transform: uppercase;
+		    transition: 0.2s ease;
+		    cursor: pointer;
+		}
+		.ex{
+			margin-left:650px;
+		}
+		.command{
+		    width: 340px;
+		    height: 50px;
+		    border: 10px solid #555;
+			margin-top:10px;
+			margin-left:550px;
+		}
+		.txt{
+			margin-left:570px;
+		}
+		.result{
+			margin-left:500px;
+		}
+	       </style>
+</head>
+<body>
+<header>
+    <div  align="center"  class="nav-bar">
+        <ul>
+            <li ><a href=""><b th:text="${player.name}"></b><span class="arrow-down"></span></a></li>
+        </ul>
+    </div>
+</header>
+<div class="commands">
+
+
+    <div class="command"  >
+        <form th:action="@{/execute}" th:Object="${command}" >
+            <input type="text"   th:field="*{playerCommands}" placeholder="Enter command  "/><br> <br><br>
+            <input type="submit" name="btnSubmit" value="Execute"/>
+        </form>
+    </div>
+    <!--
+    <div class="ex">
+        <input type="submit" name="btnSubmit" value="Quit"/>
+    </div>
+    -->
+    <br><br><br><br><br><br>
+</div>
+<div class="txt">
+    <h1>Command Results</h1>
+</div>
+
+<div class="result">
+
+    <textarea  th:text="${command.returnStatus}"  rows="5" cols="50">
+        You see a silhouette of you
+    </textarea>
+</div>
+
+
+</body>
+</html>
